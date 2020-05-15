@@ -3,7 +3,7 @@ const lodash = require("lodash");
 const folder = {
     src: "resources/", // source files
     dist: "public/", // build files
-    dist_assets: "public/assets/" //build assets files
+    dist_assets: "public/backend/" //build assets files
 };
 
 /*
@@ -145,13 +145,13 @@ const folder = {
     var out = folder.dist_assets + "fonts";
     mix.copyDirectory(folder.src + "fonts", out);
 
-    // copy all images 
+    // copy all images
     var out = folder.dist_assets + "images";
     mix.copyDirectory(folder.src + "images", out);
 
     mix.sass('resources/scss/bootstrap.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/bootstrap.css");
     mix.sass('resources/scss/bootstrap-dark.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/bootstrap-dark.css");
-    mix.sass('resources/scss/icons.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/icons.css");
+    mix.sass('resources/scss/icons.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/icons.css").options({processCssUrls: false});
     mix.sass('resources/scss/app-rtl.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/app-rtl.css");
     mix.sass('resources/scss/app.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/app.css");
     mix.sass('resources/scss/app-dark.scss', folder.dist_assets + "css").minify(folder.dist_assets + "css/app-dark.css");
