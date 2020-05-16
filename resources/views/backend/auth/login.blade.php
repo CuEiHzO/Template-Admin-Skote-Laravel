@@ -22,7 +22,7 @@ Login
                                 <div class="col-7">
                                     <div class="text-primary p-4">
                                         <h5 class="text-primary">Welcome Back !</h5>
-                                        <p>Sign in to continue to Skote.</p>
+                                        <p>Sign in to continue to AdminPanel.</p>
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
@@ -30,7 +30,7 @@ Login
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body pt-0"> 
+                        <div class="card-body pt-0">
                             <div>
                                 <a href="{{url('index')}}">
                                     <div class="avatar-md profile-user-wid mb-4">
@@ -41,11 +41,11 @@ Login
                                 </a>
                             </div>
                             <div class="p-2">
-                            <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                            <form class="form-horizontal" method="POST" action="{{ route('backend.login') }}">
                                 @csrf
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" @if(old('email')) value="{{ old('email') }}" @else value="admin@themesbrand.com" @endif id="username" placeholder="Enter username" autocomplete="email" autofocus>
+                                        <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" @if(old('email')) value="{{ old('email') }}" @else value="admin@orange-thailand.com" @endif id="username" placeholder="Enter username" autocomplete="email" autofocus>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -71,19 +71,15 @@ Login
                                     <div class="mt-3">
                                         <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
                                     </div>
-                                    
+                                    <!--
                                     <div class="mt-4 text-center">
                                         <a href="backend/template/password/reset" class="text-muted"><i class="mdi mdi-lock mr-1"></i> Forgot your password?</a>
                                     </div>
+                                  -->
                                 </form>
                             </div>
                         </div>
 
-                    </div>
-
-                    <div class="mt-5 text-center">
-                        <p>Don't have an account ? <a href="{{url('register')}}" class="font-weight-medium text-primary"> Signup now </a> </p>
-                        <p>© <script>document.write(new Date().getFullYear())</script> Skote. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
                     </div>
 
                 </div>
