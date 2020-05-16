@@ -1,7 +1,7 @@
 <div class="topnav">
         <div class="container-fluid">
             <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
-    
+
                 <div class="collapse navbar-collapse" id="topnav-menu-content">
                 <ul class="navbar-nav">
 
@@ -116,7 +116,7 @@
                                         <a href="backend/template/crypto-ico-landing" class="dropdown-item">ICO Landing</a>
                                     </div>
                                 </div>
-                                
+
                                 <div class="dropdown">
                                     <a class="dropdown-item dropdown-toggle arrow-none" href="#" id="topnav-project"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -153,7 +153,7 @@
                                 </div>
                             </div>
                         </li>
-    
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-components" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -229,9 +229,9 @@
                                 </div>
                             </div>
                         </li>
-    
-                        
-    
+
+
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-more" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -291,7 +291,7 @@
                                 <a href="backend/template/layouts-colored-header" class="dropdown-item">Colored Header</a>
                             </div>
                         </li>
-    
+
                     </ul>
                 </div>
             </nav>

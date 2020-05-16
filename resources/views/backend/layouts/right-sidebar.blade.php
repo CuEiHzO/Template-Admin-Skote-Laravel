@@ -20,7 +20,7 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
                         <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
                     </div>
-    
+
                     <div class="mb-2">
                         <img src="backend/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
                     </div>
@@ -28,16 +28,6 @@
                         <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="backend/css/bootstrap-dark.min.css" data-appStyle="backend/css/app-dark.min.css" />
                         <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
                     </div>
-    
-                    <div class="mb-2">
-                        <img src="backend/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-5">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="backend/css/app-rtl.min.css" />
-                        <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
-                    </div>
-
-                    <a href="backend/template/https://1.envato.market/grNDB" class="btn btn-primary btn-block mt-3" target="_blank"><i class="mdi mdi-cart mr-1"></i> Purchase Now</a>
 
                 </div>
 

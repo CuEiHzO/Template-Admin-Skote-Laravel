@@ -1,11 +1,10 @@
 const mix = require('laravel-mix');
 const lodash = require("lodash");
 const folder = {
-    src: "resources/", // source files
+    src: "resources\views\backend\template\resources/", // source files
     dist: "public/", // build files
     dist_assets: "public/backend/" //build assets files
 };
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
