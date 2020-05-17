@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-  protected $table = 'backend_menu';
+  protected $table = 'ck_backend_menu';
   public $timestamps = false;
 
   public function setMenu($path)

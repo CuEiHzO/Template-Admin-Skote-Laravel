@@ -10,7 +10,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $guard = 'user';
-    protected $table = 'users_customer';
+    protected $table = 'ck_users_customer';
 
     protected $fillable = [
         'name', 'email', 'password',

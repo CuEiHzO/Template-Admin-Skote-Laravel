@@ -10,7 +10,7 @@ class Admin extends Authenticatable
     use Notifiable;
 
     protected $guard = 'admin';
-    protected $table = 'users_admin';
+    protected $table = 'ck_users_admin';
 
     protected $fillable = [
         'name', 'email', 'password',

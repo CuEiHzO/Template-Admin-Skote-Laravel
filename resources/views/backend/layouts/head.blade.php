@@ -10,3 +10,6 @@
         <link href="{{ URL::asset('backend/css/app.min.css')}}" id="app-light" rel="stylesheet" type="text/css" />
         <!-- DataTables -->
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('backend/libs/datatables/datatables.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('backend/libs/toastr/toastr.min.css')}}">
+
+        <link href="{{ URL::asset('backend/css/custom.css')}}" id="app-light" rel="stylesheet" type="text/css" />

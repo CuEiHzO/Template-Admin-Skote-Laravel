@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InitModel extends Model
 {
+  protected function serializeDate(\DateTimeInterface $date)
+  {
+    return $date->format('Y-m-d H:i:s');
+  }
+
   /*
     use SoftDeletes;
     public function newQuery($excludeDeleted = true)
@@ -23,6 +28,7 @@ class InitModel extends Model
   			return parent::newQuery();
   		}
     }
+  */
 
     public static function boot()
     {
@@ -30,40 +36,40 @@ class InitModel extends Model
 
         static::creating(function($sData)
         {
-			$sData->created_by	= \Auth::user()->id??null;
-			$sData->created_at	= \Carbon\Carbon::now();
-			$sData->updated_by	= \Auth::user()->id??null;
+    			//$sData->created_by	= \Auth::user()->id??null;
+    			$sData->created_at	= \Carbon\Carbon::now();
+    			//$sData->updated_by	= \Auth::user()->id??null;
         });
 
         static::updating(function($sData)
         {
-			$sData->updated_by	= \Auth::user()->id??null;
-			$sData->updated_at	= \Carbon\Carbon::now();
+    			//$sData->updated_by	= \Auth::user()->id??null;
+    			$sData->updated_at	= \Carbon\Carbon::now();
         });
 
         static::saving(function($sData)
         {
-			/*
-			if( $sData->wasChanged() )
-			{
-				$sData->updated_by	= \Auth::user()->id;
-				$sData->updated_at	= \Carbon\Carbon::now();
-			}
-        });
 
+  			if( $sData->wasChanged() )
+  			{
+  				//$sData->updated_by	= \Auth::user()->id;
+  				$sData->updated_at	= \Carbon\Carbon::now();
+  			}
+        });
+/*
         static::deleting(function($sData)
         {
-			//$sData->updated_by	= \Auth::user()->id;
-			//$sData->updated_at	= \Carbon\Carbon::now();
+    			//$sData->updated_by	= \Auth::user()->id;
+    			//$sData->updated_at	= \Carbon\Carbon::now();
         });
 
         static::restoring(function($sData)
         {
-			//$sData->updated_by	= \Auth::user()->id;
-			//$sData->updated_at	= \Carbon\Carbon::now();
+    			//$sData->updated_by	= \Auth::user()->id;
+    			//$sData->updated_at	= \Carbon\Carbon::now();
         });
+*/
     }
-  */
 
     public function scopesearch($sQuery)
     {

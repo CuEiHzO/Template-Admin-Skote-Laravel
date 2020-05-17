@@ -8,38 +8,50 @@
 
 @section('content')
 
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box d-flex align-items-center justify-content-between">
-                                    <h4 class="mb-0 font-size-18">Account (ผู้ดูแลระบบ)</h4>
+<!-- start page title -->
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0 font-size-18">Account (ผู้ดูแลระบบ)</h4>
 
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Backend</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Permission</a></li>
-                                            <li class="breadcrumb-item active">Account (ผู้ดูแลระบบ)</li>
-                                        </ol>
-                                    </div>
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Backend</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Permission</a></li>
+                    <li class="breadcrumb-item active">Account (ผู้ดูแลระบบ)</li>
+                </ol>
+            </div>
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
+        </div>
+    </div>
+</div>
+<!-- end page title -->
 
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-8">
+                    <input type="text" class="form-control float-left text-center w130 myLike" placeholder="Name" name="name">
+                    <input type="text" class="form-control float-left ml-1 text-center w200 myLike" placeholder="E-Mail" name="email">
+                  </div>
+                  <div class="col-4 text-right">
+                    <a class="btn btn-info btn-sm mt-1" href="{{ route('backend.permission.admin.create') }}">
+                      <i class="bx bx-plus font-size-16 align-middle mr-1"></i>เพิ่มผู้ใช้งาน
+                    </a>
+                  </div>
+                </div>
 
-                                        <table id="data-table" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                                        </table>
 
-                                    </div>
-                                </div>
-                            </div> <!-- end col -->
-                        </div> <!-- end row -->
 
+                <table id="data-table" class="table table-bordered dt-responsive" style="width: 100%;">
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
 
 @endsection
 
@@ -85,15 +97,17 @@ $(function() {
         },
         columns: [
             {data: 'id', title :'Code', className: 'text-center w50'},
-            {data: 'region.rg_comment', title :'Language', className: 'text-center w100'},
-            {data: 'subject', title :'<center>Subject</center>', className: 'text-left'},
-            {data: 'staff.username', title :'Updated By', className: 'text-center w100'},
+            //{data: 'region.rg_comment', title :'Language', className: 'align-center w100'},
+            {data: 'name', title :'<center>Name</center>', className: 'text-left'},
+            {data: 'email', title :'<center>E-Mail</center>', className: 'text-left'},
+            {data: 'active', title :'<center>Active</center>', className: 'text-center'},
             {data: 'updated_at', title :'Updated At', className: 'text-center w130'},
             {data: 'id', title :'Action', className: 'text-center w60'},
         ],
         rowCallback: function(nRow, aData, dataIndex){
           $('td:last-child', nRow).html(''
-            + '<a href="{{ action("Backend\Permission\AdminController@index") }}/'+aData['id']+'/edit'+(aData['deleted_at']?'?withTrashed=true':'')+'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> แก้ไข</a> '
+            + '<a href="{{ route('backend.permission.admin.index') }}/'+aData['id']+'/edit" class="btn btn-sm btn-primary"><i class="bx bx-edit font-size-16 align-middle"></i></a> '
+            + '<a href="javascript: void(0);" data-url="{{ route('backend.permission.admin.index') }}/'+aData['id']+'" class="btn btn-sm btn-danger cDelete"><i class="bx bx-trash font-size-16 align-middle"></i></a>'
           ).addClass('input');
         }
     });
@@ -103,3 +117,4 @@ $(function() {
 });
 </script>
 @endsection
+
