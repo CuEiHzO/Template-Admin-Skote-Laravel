@@ -20,25 +20,11 @@
                   echo $Menu->setMenu(Request::path());
                 }
                 @endphp
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-layout"></i>
-                        <span>Layouts</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="backend/template/layouts-horizontal">Horizontal</a></li>
-                        <li><a href="backend/template/layouts-light-sidebar">Light Sidebar</a></li>
-                        <li><a href="backend/template/layouts-compact-sidebar">Compact Sidebar</a></li>
-                        <li><a href="backend/template/layouts-icon-sidebar">Icon Sidebar</a></li>
-                        <li><a href="backend/template/layouts-boxed">Boxed Width</a></li>
-                        <li><a href="backend/template/layouts-preloader">Preloader</a></li>
-                        <li><a href="backend/template/layouts-colored-sidebar">Colored Sidebar</a></li>
-                    </ul>
-                </li>
+                <li class="menu-title" style="margin-top: 150px;">Template Layout </li>
                 <li>
                     <a href="backend/template" class=" waves-effect">
                         <i class="bx bx-file"></i>
-                        <span>Template</span>
+                        <span>Admin Template</span>
                     </a>
                 </li>
 

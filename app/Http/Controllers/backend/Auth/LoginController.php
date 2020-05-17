@@ -23,7 +23,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest:admin')->except('logout');
-        $this->middleware('guest:user')->except('logout');
     }
 
     public function showLoginForm() {
@@ -33,7 +32,7 @@ class LoginController extends Controller
     protected function attemptLogin(Request $request)
     {
         if (\Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            \Cache::forget('Menu-'.\Auth::user()->id);
+            \Cache::forget('Menu-'.\Auth::guard('admin')->user()->id);
             return redirect()->intended('backend');
         }
     }
