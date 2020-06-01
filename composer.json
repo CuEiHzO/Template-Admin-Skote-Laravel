@@ -12,8 +12,11 @@
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
+        "laravel/socialite": "^4.3",
         "laravel/tinker": "^2.0",
+        "phpoffice/phpspreadsheet": "^1.12",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
@@ -35,6 +38,9 @@
         }
     },
     "autoload": {
+        "files": [
+            "app/Helpers/helper.php"
+        ],
         "psr-4": {
             "App\\": "app/"
         },

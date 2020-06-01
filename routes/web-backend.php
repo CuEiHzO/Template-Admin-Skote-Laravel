@@ -15,19 +15,24 @@ Route::group(['prefix' => 'backend','namespace' => 'Backend',  'as' => 'backend.
 
 
 
+ 
+      Route::resource('banner', 'BannerController');
+      Route::post('banner/datatable', 'BannerController@Datatable')->name('banner.datatable');
+
+
+      Route::resource('instagram', 'InstagramController');
+      Route::post('instagram/datatable', 'InstagramController@Datatable')->name('instagram.datatable');
+
+
+      Route::resource('label-slide', 'LabelSlideController');
+      Route::post('label-slide/datatable', 'LabelSlideController@Datatable')->name('label-slide.datatable');
 
 
 
+      Route::resource('promotion', 'PromotionController');
+      Route::post('promotion/datatable', 'PromotionController@Datatable')->name('promotion.datatable');
 
-
-
-
-
-
-
-
-
-
+  
 
 
 

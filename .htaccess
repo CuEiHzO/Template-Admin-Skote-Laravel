@@ -2,7 +2,10 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
-
+	<FilesMatch "^\.env">
+	    Order allow,deny
+	    Deny from all
+	</FilesMatch>
     RewriteEngine On
 
     # Handle Authorization Header
@@ -23,6 +26,6 @@
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_URI} !^/public/
-	RewriteRule ^(backend|css|js|images|assets|fonts)/(.*)$ public/$1/$2 [L,NC]
+	RewriteRule ^(backend|css|js|images|asset|fonts)/(.*)$ public/$1/$2 [L,NC]
 
 </IfModule>

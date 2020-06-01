@@ -38,7 +38,7 @@ class AdminController extends Controller
         }
         $sRow->name    = request('name');
         $sRow->email    = request('email');
-        $sRow->active    = request('active')?request('active'):'N';
+        $sRow->isActive    = request('active')?request('active'):'N';
         if( request('password') ){
           $sRow->password    = \Hash::make( request('password') );
         }

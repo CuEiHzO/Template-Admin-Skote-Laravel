@@ -4,7 +4,8 @@
 }
 
 .dataTables_wrapper td{
-  padding: 8px;
+  padding: 8px 7px;
+  vertical-align: middle;
 }
 .dataTables_wrapper td.input{
   padding: 5px 0 0px;

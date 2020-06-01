@@ -41,6 +41,21 @@
                 </p>
               -->
 
+            @if(empty(\Auth::user()->locale_id))
+                <div class="form-group row">
+                    <label for="example-email-input" class="col-md-2 col-form-label">Language</label>
+                    <div class="col-md-10">
+                      <select class="form-control" name="locale_id">
+                        @if($sLocale->count())
+                          @foreach($sLocale ?? '' AS $r)
+                          <option value="{{$r->locale}}" {{ (@$sRow->locale_id==$r->locale)?'selected':'' }}>{{$r->name}}</option>
+                          @endforeach
+                        @endif
+                      </select>
+                    </div>
+                </div>
+            @endif
+
                 <div class="form-group row">
                     <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
                     <div class="col-md-10">

@@ -13,7 +13,7 @@
 
         <!-- Magnific Popup -->
         <script src="{{ URL::asset('backend/libs/toastr/toastr.min.js')}}"></script>
-
+		
         @if (session('alert'))
         <span style="display:none" id="toastr">{!! session('alert.msg') !!}</span>
         <script type="text/javascript">$(function() { toastr["{{ strtolower(session('alert.status')) }}"]($('#toastr').html()); });</script>
@@ -21,6 +21,9 @@
 
         <!-- App js -->
         <script src="{{ URL::asset('backend/js/app.min.js')}}"></script>
-
+		
+		<!-- Ckeditor Js -->
+		<!-- <script src="{{ URL::asset('backend/ckeditor/ckeditor.js')}}"></script> -->
+		<script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
         @yield('script')
         @yield('script-bottom')

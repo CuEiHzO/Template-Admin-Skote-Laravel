@@ -97,8 +97,10 @@ $(function() {
         },
         columns: [
             {data: 'id', title :'Code', className: 'text-center w50'},
-            //{data: 'region.rg_comment', title :'Language', className: 'align-center w100'},
-            {data: 'name', title :'<center>Name</center>', className: 'text-left'},
+            @if(empty(\Auth::user()->locale_id))
+            {data: 'locale.name', title :'Language', className: 'text-center w100'},
+            @endif
+            {data: 'name', title :'<center>Name</center>', className: 'text-center'},
             {data: 'email', title :'<center>E-Mail</center>', className: 'text-left'},
             {data: 'active', title :'<center>Active</center>', className: 'text-center'},
             {data: 'updated_at', title :'Updated At', className: 'text-center w130'},

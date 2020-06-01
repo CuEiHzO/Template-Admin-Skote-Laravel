@@ -15,7 +15,7 @@ class Menu extends Model
     $txtMenu = '';
     $pid = array();
     $row = \Cache::remember('Menu-'.\Auth::user()->id, 10, function() {
-      $Menu = Menu::where('active', '<>', 'N')->orderBy('sort', 'asc')->orderBy('id', 'asc');
+      $Menu = Menu::where('isActive', '<>', 'N')->orderBy('sort', 'asc')->orderBy('id', 'asc');
       return $Menu->get();
     });
     if( $row ){
